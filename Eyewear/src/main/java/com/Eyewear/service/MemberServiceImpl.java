@@ -35,6 +35,21 @@ public class MemberServiceImpl implements MemberService{
 		return memberDao.idCheck(mid);
 	}
 
+	@Override
+	public MemberVO findId(MemberVO memberVO) throws Exception {
+		return memberDao.findId(memberVO);
+	}
+
+	@Override
+	public int findPw(MemberVO memberVO) throws Exception {
+		return memberDao.findPw(memberVO);
+	}
+
+	@Override
+	public MemberVO myPage(MemberVO memberVO) throws Exception {
+		return memberDao.myPage(memberVO);
+	}
+
 	
 	
 	

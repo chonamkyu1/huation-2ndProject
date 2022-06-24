@@ -333,3 +333,12 @@ a {
     text-align: center;
     color : red;
 }
+
+.final_id_ck{
+    display: none;
+}
+.final_pw_ck{
+    display: none;
+}
+
+

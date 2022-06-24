@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +46,7 @@
 						</div>
 						<div class="menu">
 			                <div style="padding: 30px 0">
-			                	<a class="menu-depth1" href="#">Info</a>
+			                	<a class="menu-depth1" href="/board/faq">Info</a>
 			                </div>
 			                <ul class="submenu dropdown-menu-center" style="background: white;">
 								<li>
@@ -65,17 +65,17 @@
 						<c:if test="${member == null }"> 
 							<div class="menu">
 								<div style="padding: 30px 0">
-									<a class="menu-depth1" href="localhost:8080/user/login" onclick="login()">Login</a>
+									<a class="menu-depth1" href="/user/login">Login</a>
 								</div>
 								<ul class="submenu dropdown-menu-center" style="background: white;">
 									<li>
-										<a class="menu-depth2" href="user/login" onclick="login()">Login</a>
+										<a class="menu-depth2" href="/user/login">Login</a>
 									</li>
 									<div class="center">
 										<div class="divider90"></div>
 									</div>
 									<li>
-										<a class="menu-depth2" href="user/join">Sign in</a>
+										<a class="menu-depth2" href="/user/join">Sign in</a>
 									</li>
 								</ul>
 							</div>
@@ -96,7 +96,7 @@
 										<div class="divider90"></div>
 									</div>
 									<li>
-										<a class="menu-depth2" href="#" onclick="logout()">Logout</a>
+										<a class="menu-depth2" href="/user/logout">Logout</a>
 									</li>
 								</ul>
 							</div>
@@ -109,5 +109,6 @@
 		</nav>
 	</div>
 <script type="text/javascript" src="../js/header.js"></script>
+
 </body>
 </html>

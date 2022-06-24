@@ -12,16 +12,16 @@
 	
 	$(document).ready(function(){
 		//회원가입 버튼(회원가입 기능 작동)
-		$(".btn-block").click(function(){
+		$(".joinButton").click(function(){
 			
 			// 입력값 변수
 			let id = $('.id_input').val();	// id 입력란
 			let pw = $('.pw_input').val(); 	// 비밀번호 입력란
 			let pwck = $('.pwck_input').val();	// 비밀번호 확인 입력란
 			let name = $('.name_input').val();	// 이름 입력란
-// 			let gender = $('#input_gender').val();	 // 성별 입력란
+ 			let gender = $('#mgender').val();	 // 성별 입력란
 			let phone = $('.phone_input').val(); // 전화번호 입력란
-			let mail = $('.email_input').val();	// 이메일 입력란
+			let mail = $('.mail_input').val();	// 이메일 입력란
 			
 			
 			// id 유효성 검사
@@ -59,7 +59,10 @@
 				$('.final_name_ck').css('display', 'none');
 				nameCheck = true;
 			}
-			
+
+			// 성별~~
+			genderCheck = true;
+	
 			// 전화번호 유효성 검사
 			if (phone == "") {
 				$('.final_phone_ck').css('display', 'block');
@@ -69,7 +72,7 @@
 				phoneCheck = true;
 			}
 			
-			if (mail = "") {
+			if (mail == "") {
 				$('.final_mail_ck').css('display', 'block');
 				mailCheck = false;
 			} else {
@@ -78,11 +81,11 @@
 			}
 			
 			console.log ("idCheck : ", idCheck + ", idckCheck : ", idckCheck + ", pwCheck : ", pwCheck + ", pwckCheck : ", pwckCheck + ", pwckcorCheck : ", pwckcorCheck
-					+ ", nameCheck : ", nameCheck +  ",phoneCheck : ", phoneCheck + ", mailCheck :", mailCheck + ", mailnumCheck : " , mailnumCheck);
+					+ ", nameCheck : ", nameCheck + ", genderCheck : ", genderCheck + ",phoneCheck : ", phoneCheck + ", mailCheck :", mailCheck + ", mailnumCheck : " , mailnumCheck);
 			
-			if (idCheck && idckCheck && pwCheck && pwckCheck && pwckcorCheck && nameCheck && phoneCheck && mailCheck && mailnumCheck) {
+			if (idCheck && idckCheck && pwCheck && pwckCheck && pwckcorCheck && nameCheck &&genderCheck && phoneCheck && mailCheck && mailnumCheck) {
 				console.log ("idCheck : ", idCheck + ", idckCheck : ", idckCheck + ", pwCheck : ", pwCheck + ", pwckCheck : ", pwckCheck + ", pwckcorCheck : ", pwckcorCheck
-						+ ", nameCheck : ", nameCheck +  ",phoneCheck : ", phoneCheck + ", mailCheck :", mailCheck + ", mailnumCheck : " , mailnumCheck);
+						+ ", nameCheck : ", nameCheck + ",genderCheck : ", genderCheck  + ",phoneCheck : ", phoneCheck + ", mailCheck :", mailCheck + ", mailnumCheck : " , mailnumCheck);
 				
 				$("#joinForm").attr("action", "/user/join");
 				$("#joinForm").submit();
@@ -199,4 +202,26 @@
 		let form = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 		return form.test(memail);
 	}
+	
+	// 성별 
+	$(document).ready(function(){
+// 	function send() {
+// 		let mgender = $(mgender).val();
+		
+// 		console.log("mgender", mgender);
+// 	}
+	
+	
+	$(".dropselect-option").on('click', function() {
+		$("#input_gender").text($(this).text());
+		
+		let mgender = $(this).attr('data-value');
+		
+		console.log("선택된 메소드 : ", mgender);
+		
+		$("#mgender").val(mgender);
+	});
+	
+});
+	
 	

@@ -6,3 +6,11 @@
 	})
 });
 */
+
+/*
+function login() {
+		alert("로그인~");
+		location.href="localhost:8080/user/login"
+	}
+	
+*/

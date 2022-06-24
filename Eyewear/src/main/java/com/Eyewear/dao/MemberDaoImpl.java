@@ -34,4 +34,23 @@ public class MemberDaoImpl implements MemberDao{
 		return mapper.idCheck(mid);
 	}
 
+	@Override
+	public MemberVO findId(MemberVO memberVO) throws Exception {
+		MemberMapper mapper =  sqlSession.getMapper(MemberMapper.class);
+		return mapper.findId(memberVO);
+		
+	}
+
+	@Override
+	public int findPw(MemberVO memberVO) throws Exception {
+		MemberMapper mapper =  sqlSession.getMapper(MemberMapper.class);
+		return mapper.findPw(memberVO);
+	}
+
+	@Override
+	public MemberVO myPage(MemberVO memberVO) throws Exception {
+		MemberMapper mapper =  sqlSession.getMapper(MemberMapper.class);
+		return mapper.myPage(memberVO);
+	}
+
 }

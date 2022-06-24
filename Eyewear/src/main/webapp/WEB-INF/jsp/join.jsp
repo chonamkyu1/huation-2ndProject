@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/join.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
 <body>
@@ -59,7 +59,7 @@
 						<div class="mt-1 mt-md-2 mb-4 mb-md-8">
 							<div class="selection_dropselect">
 								<div class="dropdown dropselect">
-									<input type="hidden" name="mgender" value="남자">
+									<input type="hidden" name="mgender" id="mgender" value=""  >
 									<button class="dropdown-toggle" id="input_gender" type="button" data-toggle="dropdown" aria-expanded="false">
 										<span class="dropdown-label">남자</span>
 									</button>
@@ -75,14 +75,14 @@
 						
 						<label class="mb-1 mb-md-2" for="input_phone">전화번호 *</label>
 						<div class="mt-1 mt-md-2 mb-2 mb-md-4">
-							<input class="form-control form-control-sm form__input form-control-grey phone_input" id="input_phone" type="phone" name="mphone" value="" placeholder="전화번호를 입력하세요.">
+							<input class="form-control form-control-sm form__input form-control-grey phone_input" id="input_phone" type="text" name="mphone" value="" placeholder="전화번호를 입력하세요.">
 							<div class="invalid-feedback text-danger" id="error_phone" style="display:block;">&nbsp;</div>
 							<div class="final_phone_ck">전화번호를 입력해주세요.</div>
 						</div>
 						
 						<label class="mb-1 mb-md-2" for="input_email">이메일 *</label>
 						<div class="mt-1 mt-md-2 mb-2 mb-md-4 ">
-							<input class="form-control form-control-sm form__input form-control-grey mail_input" id="input_email" type="email" name="memail" value="" placeholder="이메일을 입력하세요.">
+							<input class="form-control form-control-sm form__input form-control-grey mail_input" id="input_email" type="text" name="memail" value="" placeholder="이메일을 입력하세요.">
 							<div class="invalid-feedback text-danger" id="error_email" style="display:block;">&nbsp;</div>
 							<div class="final_mail_ck">이메일을 입력해주세요.</div>
 							<div class="mail_input_box_warn"></div>
@@ -99,7 +99,7 @@
 						</div>
 						
 						
-						<button class="btn btn-dark btn-xl btn-block" type="button">가입하기</button>
+						<button class="btn btn-dark btn-xl btn-block joinButton" type="button">가입하기</button>
 						
 					</section>
 				

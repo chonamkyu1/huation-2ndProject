@@ -2,6 +2,7 @@ package com.Eyewear.controller;
 
 import java.util.Random;
 
+import javax.annotation.Resource;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,11 +16,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.Eyewear.service.MemberService;
 import com.Eyewear.vo.MemberVO;
 
+@SessionAttributes()
 @Controller
 public class MemberController {
 
@@ -31,6 +34,9 @@ public class MemberController {
 	
 	@Autowired
 	private JavaMailSender mailSender;
+	
+//	@Resource(name="pwEncoder")
+	
 	
 	
 	// 로그인 페이지
@@ -57,11 +63,11 @@ public class MemberController {
 			return "redirect:/user/login";
 		}
 		
-		session.setAttribute("member", lvo);   // 아이디, 비밀번호 일치하는 경우 (로그인 성공)!!
+		session.setAttribute("member", lvo);   // 아이디, 비밀번호 일치하는 경우 (로그인 성공)!!, 세션 헤더에 저장
+		
+		System.out.println("member: " + lvo);
 		
 		return "redirect:/main";
-		
-		
 		
 		
 //		MemberVO loginMember =  memberService.login(memberVO.getMid(), memberVO.getMpassword());
@@ -82,6 +88,139 @@ public class MemberController {
 		
 	}
 	
+	// 메인페이지 로그아웃
+	@RequestMapping(value="/user/logout", method = RequestMethod.GET)
+	public String logoutMainGET(HttpServletRequest request) throws Exception {
+		
+		logger.info("로그아웃 메서드 진입");
+		
+		HttpSession session = request.getSession();  
+		
+		session.invalidate(); // 기존 세션 제거
+		
+		return "redirect:/main";
+	}
+	
+	// 아이디 찾기
+	@RequestMapping(value = "/user/find_id", method = RequestMethod.GET)
+	public String findIdGET() throws Exception {
+		logger.info("아이디찾기 페이지 GET");
+		
+		return "findId";
+	}
+	
+	@RequestMapping(value = "/user/find_id", method = RequestMethod.POST)
+	public String findIdPOST(MemberVO memberVO) throws Exception {
+		logger.info("아이디찾기 페이지 POST");
+		
+		MemberVO fvo = memberService.findId(memberVO);
+		System.out.println("fvo : " + fvo);
+		
+		
+		logger.info("findId service 성공");
+		
+		
+
+		return "afterFindId";
+	}
+	
+	// 비밀번호 찾기
+	@RequestMapping(value = "/user/find_pw", method = RequestMethod.GET)
+	public String findPwGET() throws Exception {
+		logger.info("비밀번호찾기 페이지 GET");
+		
+		return "findPw";
+	}
+	
+	@RequestMapping(value = "/user/find_pw", method = RequestMethod.POST)
+	public String findPwPOST(MemberVO memberVO) throws Exception {
+		logger.info("비밀번호찾기 페이지 POST");
+		
+		int result = memberService.findPw(memberVO);
+		logger.info("result : " + result);
+		logger.info("findPw service 성공");
+		
+		return "afterFindPw";
+	}
+	
+	
+	@RequestMapping(value = "user/afterFind_id", method = RequestMethod.GET)
+	public String afterFIndId() throws Exception {
+		System.out.println("요기");
+		
+		
+		return "afterFindId";
+	}
+	
+	@RequestMapping(value = "user/afterFind_pw", method = RequestMethod.GET)
+	public String afterFIndPw() throws Exception {
+		System.out.println("요기");
+		
+		
+		return "afterFindPw";
+	}
+	
+	// 마이페이지
+	
+	@RequestMapping(value = "user/edit", method = RequestMethod.GET)
+	public String myPageGET(HttpServletRequest request) throws Exception {
+		logger.info("마이페이지 GET");
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("member")==null) {
+			return "redirect:/main";
+		}
+		
+		
+		
+		return "mypage";
+		
+		
+	}
+	
+	
+	@RequestMapping(value = "user/edit", method = RequestMethod.POST)
+	public String myPagePOST(HttpServletRequest request, MemberVO memberVO, RedirectAttributes rttr) throws Exception {
+		logger.info("마이페이지 POST");
+		
+		
+//		`HttpSession session = request.getSession();
+//		session.setAttribute("member", mvo);
+//		MemberVO mvo = memberService.myPage(memberVO);
+//		System.out.println("member " + mvo);
+		
+		return "mypage";
+	}
+	
+	// 마이페이지 제작현황 
+	@RequestMapping(value = "user/status", method = RequestMethod.GET)
+	public String myPageStatusGET() throws Exception {
+		logger.info("마이페이지 제작현황 조회");
+		
+		
+		return "status";
+	}
+	
+	// 마이페이지 예약현황 
+	@RequestMapping(value = "reserve/list", method = RequestMethod.GET)
+	public String myPageReserveGET() throws Exception {
+		logger.info("마이페이지 예약관리");
+		
+		
+		return "reserve";
+	}
+	
+	// 마이페이지 나의 구매후기 
+		@RequestMapping(value = "user/review", method = RequestMethod.GET)
+		public String myPageReviewGET() throws Exception {
+			logger.info("마이페이지 나의 구매후기");
+			
+			
+			return "review";
+		}
+	
+	
+	// 회원가입
 	@RequestMapping(value = "/user/join", method = RequestMethod.GET)
 	public String joinGET() throws Exception {
 		logger.info("회원가입 페이지 joinGet");
@@ -98,9 +237,9 @@ public class MemberController {
 		String rawPw = ""; // 인코딩 전 비밀번호
 		String encodePw = ""; // 인코딩 후 비밀번호
 		
-//		rawPw =  memberVO.getMpassword(); // 비밀번호 데이터 얻음
+		rawPw =  memberVO.getMpassword(); // 비밀번호 데이터 얻음
 //		encodePw = pwEncoder.encode(rawPw); // 비밀번호 인코딩
-//		memberVO.setMpassword(encodePw); // 인코딩된 비밀번호 다시 객체 저장
+		memberVO.setMpassword(encodePw); // 인코딩된 비밀번호 다시 객체 저장
 		
 		// 회원가입 쿼리 실행
 		memberService.memberJoin(memberVO);

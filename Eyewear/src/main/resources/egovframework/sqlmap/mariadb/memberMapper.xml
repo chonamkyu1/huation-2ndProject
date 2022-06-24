@@ -19,4 +19,22 @@
 	<select id="idCheck" resultType="int">
 		SELECT COUNT(*) FROM member WHERE mid = #{mid}
 	</select>
+	
+	
+	<!-- ID 찾기 -->
+	<select id="findId" resultType="memberVO">
+		SELECT mid FROM member WHERE mname = #{mname} AND memail = #{memail}
+	</select>
+	
+	<!-- PW 찾기 -->
+	<select id="findPw" resultType="int">
+		SELECT COUNT(*) FROM member WHERE mid = #{mid} AND  mname = #{mname} AND memail = #{memail}
+	</select>
+	
+	
+	<!-- 마이페이지 -->
+	<select id="myPage" resultType="memberVO">
+		SELECT * FROM member WHERE mid = #{mid}
+	</select>
+	
 </mapper>

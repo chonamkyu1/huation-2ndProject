@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/login.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
 
 </head>
@@ -30,11 +30,14 @@
 							<div class="form-btn-group mt-1 mt-md-2 mb-2 mb-md-4">
 								<input class="form-control form__input form-control-grey id_input" id="input_email" type="text" name="mid" value="" placeholder="ID를 입력하세요." aria-invalid="true">
 								<div class="invalid-feedback text-danger" id="error_email" style="display:block;">&nbsp;</div>
+								<div class="final_id_ck">아이디를 입력해주세요.</div>
+								
 								
 							</div>
 							<div class="form-btn-group mt-1 mt-md-2 mb-2 mb-md-4">
 								<input class="form-control form__input form-control-grey pw_input" id="input_pw" type="password" name="mpassword" value="" placeholder="비밀번호를 입력하세요.">
 								<div class="invalid-feedback text-danger" id="error_password" style="display:block;">&nbsp;</div>
+								<div class="final_pw_ck">비밀번호를 입력해주세요.</div>
 							</div>
 	
 							<c:if test="${result == 0 }">
@@ -48,7 +51,7 @@
 										<label class="custom-control-label" for="saveCheckbox">로그인 상태 유지</label>
  									</div>
 								</div>
-								<div class="col-6 text-right"><a class="cus_link breezm_color" href="/user/find_id">이메일/비밀번호 찾기</a></div>
+								<div class="col-6 text-right"><a class="cus_link breezm_color" href="/user/find_id">ID/비밀번호 찾기</a></div>
 							</div>
 							<div>
 								<div class="text-right my-2 my-md-4 mt_zero"><a class="cus_link breezm_color" href="/user/join">회원가입</a></div>
