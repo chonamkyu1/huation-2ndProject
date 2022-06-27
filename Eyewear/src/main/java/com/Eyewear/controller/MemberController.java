@@ -22,7 +22,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.Eyewear.service.MemberService;
 import com.Eyewear.vo.MemberVO;
 
-@SessionAttributes()
 @Controller
 public class MemberController {
 
@@ -207,7 +206,7 @@ public class MemberController {
 		logger.info("마이페이지 예약관리");
 		
 		
-		return "reserve";
+		return "myReserve";
 	}
 	
 	// 마이페이지 나의 구매후기 

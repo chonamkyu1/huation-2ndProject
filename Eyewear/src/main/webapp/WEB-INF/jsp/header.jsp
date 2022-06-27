@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>브리즘 :: 나만의 퍼스널 아이웨어</title>
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="/css/header.css">
 <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
 
 
@@ -102,13 +102,13 @@
 							</div>
 						</c:if>
 						
-						<a class="layout_reservation_btn pc_reservation_menu" href="#" style="color: white">Reservation</a>
+						<a class="layout_reservation_btn pc_reservation_menu" href="/reserve" style="color: white">Reservation</a>
 					</div>
 				</div>
 			</div>
 		</nav>
 	</div>
-<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="/js/header.js"></script>
 
 </body>
 </html>

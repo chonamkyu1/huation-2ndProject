@@ -255,3 +255,295 @@ a {
     border: 1px solid #c4c4c4;
     margin-bottom: 30px;
 }
+
+
+.align_center {
+    align-items: center;
+}
+
+.weight400 {
+    font-weight: 400;
+}
+.align_center {
+    text-align: center;
+}
+
+.text_center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+}
+
+.min_width {
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+
+.my-110 {
+    margin: 110px 0;
+}
+.font-size-26 {
+    font-size: 26px !important;
+}
+
+.res_wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.res_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    height: 350px;
+    margin-right: 90px;
+}
+
+#reserve-store-list :nth-child(3n) {
+    margin-right: 0px!important;
+}
+
+.weight700 {
+    font-weight: 700!important;
+}
+
+.text_16 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.res_button {
+    width: 143px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 13px 42px !important;
+}
+
+a {
+    color: #5c5b5b;
+    transition: all .5s ease;
+    text-decoration: none !important;
+}
+
+.divider {
+    border-top: 1px solid rgba(0, 0, 0, 0.20);
+    width: 100%;
+}
+
+
+
+.star-margin {
+    margin-right: 8px;
+}
+
+.star-ratings {
+    unicode-bidi: bidi-override;
+    color: #ccc;
+    font-size: 44px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.star-ratings .fill-ratings {
+    color: #FFAF3E;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.star-ratings .empty-ratings {
+    padding: 0;
+    display: block;
+    z-index: 0;
+}
+
+.around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.store_toggle_btn {
+    height: 56px;
+    width: 221px;
+    padding: 16px;
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.store_item {
+    height: 56px;
+    width: 221px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.review-star-ratings {
+    unicode-bidi: bidi-override;
+    color: #ccc;
+    font-size: 20px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.review-star-ratings .fill-ratings {
+    color: #FFAF3E;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.review-star-ratings .empty-ratings {
+    padding: 0;
+    display: block;
+    z-index: 0;
+}
+
+.flex_end {
+    display: flex;
+    align-items: flex-end;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.modal-header {
+    position: relative;
+    height: auto;
+    text-align: center;
+    padding: 36px 50px 24px;
+    border-bottom: 0;
+}
+
+.modal_flex_end {
+    display: flex;
+    justify-content: flex-end;
+    border: none !important;
+    padding: 10px;
+}
+
+
+
+.popup-body {
+    padding: 0 30px 40px;
+}
+
+
+.find_log_btn {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 142px;
+    height: 50px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.non_member_btn {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 225px;
+    height: 50px;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.font-size-16 {
+    font-size: 16px !important;
+}
+
+.res_detail_box {
+    border: none;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.my-150 {
+    margin: 150px 0;
+}
+
+.detail_select_box {
+    width: 210px;
+    height: 73px;
+}
+
+.select_subtitle {
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.my-100 {
+    margin: 100px 0;
+}
+
+
+.age_drop_btn {
+    width: 375px;
+    padding: 19px 24px;
+    font-size: 24px;
+    font-weight: 300;
+    background: white;
+    cursor: pointer;
+}
+
+.table-calendar-yearmonth button {
+    padding: 4px 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.table-calendar tbody td {
+    vertical-align: top !important;
+    padding: 0 !important;
+    background-color: #fff;
+}

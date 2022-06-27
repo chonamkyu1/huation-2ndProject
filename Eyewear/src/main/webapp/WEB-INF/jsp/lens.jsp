@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/lens.css">
+<link rel="stylesheet" href="/css/lens.css">
 </head>
 <body>
 	<%@include file="/WEB-INF/jsp/header.jsp" %>

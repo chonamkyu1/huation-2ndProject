@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/theme.css">
-<link rel="stylesheet" href="../css/pc_ver.css">
+<link rel="stylesheet" href="/css/theme.css">
+<link rel="stylesheet" href="/css/pc_ver.css">
 </head>
 <body>
 	
@@ -17,7 +17,7 @@
 	
 	<div id="user-contents">
 		<!-- Container-->
-		<div class="width_100">
+		<div class="width100">
 			<div class="center font-size-24 weight400" style="padding: 80px 0 60px;">이메일/ 비밀번호 찾기</div>
 			<div class="center">
 				<div class="find_wrapper">

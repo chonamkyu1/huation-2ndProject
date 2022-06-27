@@ -6,7 +6,7 @@
 		
 		<typeAlias alias="testVO" type="com.Eyewear.vo.TestVO" />
 		<typeAlias alias="memberVO" type="com.Eyewear.vo.MemberVO" />
-		
+		<typeAlias alias="storeVO" type="com.Eyewear.vo.StoreVO" />
 		
     </typeAliases>
 </configuration>
